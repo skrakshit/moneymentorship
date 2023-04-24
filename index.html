@@ -11,6 +11,26 @@
     
 </head>
 <body>
+    <script>
+        const form = document.querySelector('nav form');
+        const input = document.querySelector('nav input');
+        const submitBtn = document.querySelector('nav button');
+      
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const query = input.value.trim();
+          if (query) {
+            // Here you can add the code that performs the search
+            console.log(`Search for: ${query}`);
+          }
+        });
+      
+        submitBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          form.submit();
+        });
+      </script>
+      
     <div class="container">
         <div class="main">
             <nav>
@@ -22,6 +42,14 @@
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Services</a></li>
+                    <!-- <li class="search-icon"><a href="#"><i class="fas fa-search"></i></a></li> -->
+                    <li class="search-icon">
+                        <form>
+                          <input type="text" placeholder="Search here">
+                          <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                      </li>
+                      
                 </ul>
                 
             </nav>
